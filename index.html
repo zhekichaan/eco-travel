@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Meta tags and external resources (fonts, styles) -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./imgs/favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="other/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>EcoTravel</title>
+  </head>
+  <body class="font-[Montserrat]">
+    <!-- Header section with background image and centered logo -->
+    <header
+      id="header"
+      class="bg-[url('./imgs/header-bg.jpg')] bg-cover bg-center"
+    >
+      <img
+        class="w-[200px] mx-auto"
+        src="./imgs/logo.png"
+        alt="A company logo showing a leaf and Eco Travel text"
+      />
+      <!-- Company slogan for branding -->
+      <p class="text-center text-[18px] pb-[10px]">
+        "Explore the World, Protect the Planet."
+      </p>
+
+      <!-- Dynamic message placeholder for user interaction -->
+      <p
+        id="welcome-message"
+        class="mx-auto text-white pb-[5px] px-[10px] pt-[5px] bg-[#75c987] rounded-t-xl w-fit border-b border-[#87e89c]"
+      ></p>
+    </header>
+
+    <!-- Navigation: Sticky navbar with section links -->
+    <nav class="sticky top-0 text-white">
+      <ul
+        class="mx-auto flex space-x-3 justify-center bg-[#75c987] text-[16px] md:text-[20px]"
+      >
+        <!-- Navigation links lead to specific sections of the webpage -->
+        <li id="homeBtn" class="py-[15px] selectedBtn">
+          <a
+            class="py-[17px] px-[5px] md:px-[15px] hover:text-black"
+            href="#"
+            onclick="handleSectionChange('home')"
+            >Home</a
+          >
+        </li>
+        <li id="aboutBtn" class="py-[15px]">
+          <a
+            class="py-[17px] px-[5px] md:px-[15px] hover:text-black"
+            href="#"
+            onclick="handleSectionChange('about')"
+            >About</a
+          >
+        </li>
+        <li id="destinationsBtn" class="py-[15px]">
+          <a
+            class="py-[17px] px-[5px] md:px-[15px] hover:text-black"
+            href="#"
+            onclick="handleSectionChange('destinations')"
+            >Destinations</a
+          >
+        </li>
+
+        <li id="contactBtn" class="py-[15px]">
+          <a
+            class="py-[17px] px-[5px] md:px-[15px] hover:text-black"
+            href="#"
+            onclick="handleSectionChange('contact')"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Home section: Featured travel packages with interactive cards -->
+      <section id="home" class="max-w-[1200px] px-[20px] py-[50px] mx-auto">
+        <h1 class="pb-[20px] text-[28px] text-center text-[#75c987]">
+          Discover Eco-Friendly Adventures Around the World.
+        </h1>
+        <img
+          class="w-[600px] mx-auto"
+          src="./imgs/home.jpg"
+          alt="A picture of a woman sitting on the rocks outside in the nature. She is sitting on the edge of the pool. The nature is tropical"
+        />
+        <h2 class="text-center text-[24px] py-[30px] text-[#75c987]">
+          Our Featured Packages
+        </h2>
+        <ul
+          class="flex flex-wrap gap-[25px] text-center text-[20px] items-center"
+        >
+          <li
+            class="p-[15px] border rounded lg:hover:scale-110 transition ease-in-out w-[330px] flex-auto cursor-pointer"
+            onclick="handleSectionChange('destinations'); handleHighlight('kyoto')"
+          >
+            <h3>Kyoto, Japan</h3>
+            <img
+              src="imgs/kyoto.jpg"
+              alt="A picture showcasing a Kyoto streets with a woman in traditional Japanese clothes carrying a traditional umbrella"
+              class="w-full h-[300px] object-cover rounded mt-[15px]"
+            />
+            <div class="flex w-fit mx-auto pt-[15px] gap-[15px]">
+              <div class="flex gap-[5px]">
+                <img
+                  src="imgs/calendar.png"
+                  alt="Calendar icon"
+                  class="w-[30px] h-[30px]"
+                />
+                <p>6 Days</p>
+              </div>
+              <div class="flex gap-[5px]">
+                <img
+                  src="imgs/dollar.png"
+                  alt="A dollar icon"
+                  class="w-[30px] h-[30px]"
+                />
+                <p>$2,700</p>
+              </div>
+            </div>
+
+            <ul class="flex mx-auto w-fit mt-[10px] gap-[5px]">
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+            </ul>
+          </li>
+          <li
+            class="p-[15px] border rounded lg:hover:scale-110 transition ease-in-out w-[330px] flex-auto cursor-pointer"
+            onclick="handleSectionChange('destinations'); handleHighlight('santorini')"
+          >
+            <h3>Santorini, Greece</h3>
+            <img
+              src="imgs/santorini.avif"
+              alt="A picture of a Santorini Island with a sea on it and a lot of small white residential buildings"
+              class="w-full h-[300px] object-cover rounded mt-[15px]"
+            />
+            <div class="flex w-fit mx-auto pt-[15px] gap-[15px]">
+              <div class="flex gap-[5px]">
+                <img
+                  src="imgs/calendar.png"
+                  alt="Calendar icon"
+                  class="w-[30px] h-[30px]"
+                />
+                <p>10 Days</p>
+              </div>
+              <div class="flex gap-[5px]">
+                <img
+                  src="imgs/dollar.png"
+                  alt="A dollar icon"
+                  class="w-[30px] h-[30px]"
+                />
+                <p>$4,500</p>
+              </div>
+            </div>
+
+            <ul class="flex mx-auto w-fit mt-[10px] gap-[5px]">
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+            </ul>
+          </li>
+          <li
+            class="p-[15px] border rounded lg:hover:scale-110 transition ease-in-out w-[330px] flex-auto cursor-pointer"
+            onclick="handleSectionChange('destinations'); handleHighlight('queenstown')"
+          >
+            <h3 class="text-[18px]">Queenstown, New Zealand</h3>
+            <img
+              src="imgs/queenstown.jpg"
+              alt="A picture of a Queenstown city with mountains in background and a big lake"
+              class="w-full h-[300px] object-cover rounded mt-[15px]"
+            />
+            <div class="flex w-fit mx-auto pt-[15px] gap-[15px]">
+              <div class="flex gap-[5px]">
+                <img
+                  src="imgs/calendar.png"
+                  alt="Calendar icon"
+                  class="w-[30px] h-[30px]"
+                />
+                <p>12 Days</p>
+              </div>
+              <div class="flex gap-[5px]">
+                <img
+                  src="imgs/dollar.png"
+                  alt="A dollar icon"
+                  class="w-[30px] h-[30px]"
+                />
+                <p>$4,000</p>
+              </div>
+            </div>
+
+            <ul class="flex mx-auto w-fit mt-[10px] gap-[5px]">
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+              <li>
+                <img
+                  src="imgs/star.png"
+                  width="20px"
+                  alt="A yellow star icon"
+                />
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- About section: Company mission and values -->
+      <section
+        id="about"
+        class="max-w-[1200px] px-[20px] py-[40px] mx-auto pt-[50px] hidden"
+      >
+        <h2 class="text-center text-[20px] text-[#75c987]">
+          About Us - EcoTravel
+        </h2>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <p class="text-lg leading-relaxed">
+            Welcome to EcoTravel, where adventure meets responsibility! We
+            believe exploring the world shouldn't come at the cost of its
+            beauty, and we're here to make sure your travels leave only
+            footprints and take only memories.
+          </p>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-2 mb-10">
+          <div>
+            <h3 class="text-xl font-semibold text-[#75c987] mb-3">
+              Our Mission
+            </h3>
+            <p>
+              At EcoTravel, we’re on a mission to transform the way people
+              travel. By focusing on sustainable practices and partnering with
+              local communities, we offer eco-friendly travel packages that help
+              preserve nature and support local economies. Whether it’s a
+              tropical escape, a mountain adventure, or a cultural city tour, we
+              create experiences that are as kind to the planet as they are
+              unforgettable for you.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-[#75c987] mb-3">
+              Why Choose EcoTravel?
+            </h3>
+            <p>
+              We know that today’s traveler cares about the world we live in, so
+              we’ve designed every package to minimize environmental impact
+              without sacrificing adventure or comfort. Our trips incorporate
+              eco-conscious accommodations, low-emission transportation, and
+              activities that promote environmental education. Plus, we work
+              with guides and local businesses committed to sustainability,
+              ensuring every trip supports the people and places that make it
+              unique.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-2 mb-10">
+          <div>
+            <h3 class="text-xl font-semibold text-[#75c987] mb-3">
+              Travel with Purpose
+            </h3>
+            <p class="text-gray-600">
+              Traveling with EcoTravel means choosing to make a difference. From
+              beach cleanups and reforestation projects to cultural immersion
+              and wildlife conservation, our itineraries go beyond sightseeing.
+              We invite you to connect with the local communities and
+              participate in efforts to protect the ecosystems you’re visiting.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-[#75c987] mb-3">
+              Our Promise to You
+            </h3>
+            <p class="text-gray-600">
+              We’re dedicated to making sure every journey with us is
+              meaningful, sustainable, and enriching. At EcoTravel, we believe
+              everyone has a part to play in preserving our planet, and we’re
+              here to make it easy, fun, and adventurous for you to do just
+              that.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg text-gray-600">
+            So, pack your bags and let’s explore sustainably – for today, for
+            tomorrow, for the world.
+          </p>
+        </div>
+      </section>
+
+      <!-- Destinations section: Interactive table with detailed package information -->
+      <section
+        id="destinations"
+        class="max-w-[1200px] px-[5px] md:px-[20px] mx-auto pt-[50px] hidden"
+      >
+        <h2 class="text-center text-[22px] text-[#75c987]">
+          Our Exclusive Travel Packages
+        </h2>
+
+        <!-- Table layout for travel destinations -->
+        <table
+          class="table-auto text-[12px] md:text-[16px] max-w-[1000px] mx-auto mt-[15px] shadow-lg rounded-lg overflow-hidden border border-gray-200"
+        >
+          <thead class="bg-[#61a871] text-white">
+            <tr>
+              <th class="p-[5px] md:p-[10px]">Destination</th>
+              <th class="p-[5px] md:p-[10px]">Duration</th>
+              <th class="p-[5px] md:p-[10px]">Price</th>
+              <th class="p-[5px] md:p-[10px]">Rating</th>
+              <th class="p-[5px] md:p-[10px]">Activities Included</th>
+            </tr>
+          </thead>
+          <tbody id="travel-destinations">
+            <tr
+              id="table-row-one"
+              class="cursor-pointer hover:bg-[#75c987] border-b border-gray-200"
+              onclick="handleHighlight('queenstown')"
+            >
+              <td class="p-[5px] md:p-[10px]">Queenstown, New Zealand</td>
+              <td class="p-[5px] md:p-[10px]">12 Days</td>
+              <td class="p-[5px] md:p-[10px]">$4,000</td>
+              <td class="p-[5px] md:p-[10px]">5 Stars</td>
+              <td class="p-[5px] md:p-[10px]">
+                Hiking, Rafting, Wildlife Tours
+              </td>
+            </tr>
+            <tr
+              id="table-row-two"
+              class="cursor-pointer hover:bg-[#75c987] border-b border-gray-200"
+              onclick="handleHighlight('kruger')"
+            >
+              <td class="p-[5px] md:p-[10px]">
+                Kruger National Park, South Africa
+              </td>
+              <td class="p-[5px] md:p-[10px]">9 Days</td>
+              <td class="p-[5px] md:p-[10px]">$3,800</td>
+              <td class="p-[5px] md:p-[10px]">4 Stars</td>
+              <td class="p-[5px] md:p-[10px]">Safari Tours, Cultural Visits</td>
+            </tr>
+            <tr
+              id="table-row-three"
+              class="cursor-pointer hover:bg-[#75c987] border-b border-gray-200"
+              onclick="handleHighlight('kyoto')"
+            >
+              <td class="p-[5px] md:p-[10px]">Kyoto, Japan</td>
+              <td class="p-[5px] md:p-[10px]">6 Days</td>
+              <td class="p-[5px] md:p-[10px]">$2,700</td>
+              <td class="p-[5px] md:p-[10px]">5 Stars</td>
+              <td class="p-[5px] md:p-[10px]">Temple Tours, Tea Ceremonies</td>
+            </tr>
+            <tr
+              id="table-row-four"
+              class="cursor-pointer hover:bg-[#75c987] border-b border-gray-200"
+              onclick="handleHighlight('torres')"
+            >
+              <td class="p-[5px] md:p-[10px]">Torres del Paine, Chile</td>
+              <td class="p-[5px] md:p-[10px]">8 Days</td>
+              <td class="p-[5px] md:p-[10px]">$3,200</td>
+              <td class="p-[5px] md:p-[10px]">4 Stars</td>
+              <td class="p-[5px] md:p-[10px]">Trekking, Glacier Viewing</td>
+            </tr>
+            <tr
+              id="table-row-five"
+              class="cursor-pointer hover:bg-[#75c987] border-b border-gray-200"
+              onclick="handleHighlight('santorini')"
+            >
+              <td class="p-[5px] md:p-[10px]">Santorini, Greece</td>
+              <td class="p-[5px] md:p-[10px]">10 Days</td>
+              <td class="p-[5px] md:p-[10px]">$4,500</td>
+              <td class="p-[5px] md:p-[10px]">5 Stars</td>
+              <td class="p-[5px] md:p-[10px]">Island Hopping, Wine Tasting</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="desc max-w-[1200px] px-[15px]">
+          <div
+            id="desc-placeholder"
+            class="desc-item text-center text-[28px] py-[30px]"
+          >
+            <h2>Click On Any Package To Discover More</h2>
+          </div>
+          <div
+            id="desc-queenstown"
+            class="desc-item hidden border rounder my-[30px] shadow-lg"
+          >
+            <h2 class="text-[24px] text-center py-[20px]">
+              Queenstown, New Zealand
+            </h2>
+            <div class="flex gap-[20px] flex-wrap items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49453.11501826094!2d168.6563025053937!3d-45.023492469469275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa9d51df1d7a8de5f%3A0x500ef868479a600!2z0JrQstGW0L3RgdGC0LDRg9C9LCDQndC-0LLQsCDQl9C10LvQsNC90LTRltGP!5e1!3m2!1suk!2sca!4v1730416973915!5m2!1suk!2sca"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                width="400"
+                height="400"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <img
+                src="imgs/queenstown.jpg"
+                alt="A picture of a Queenstown city with mountains in background and a big lake"
+                class="h-[400px] object-cover rounded"
+              />
+            </div>
+            <p class="max-w-[1000px] mx-auto text-[18px] p-[20px]">
+              Experience the ultimate outdoor adventure in Queenstown! Known as
+              the adventure capital of the world, this 12-day journey takes you
+              through breathtaking landscapes with exhilarating hiking trails,
+              heart-racing rafting excursions, and unforgettable wildlife tours.
+              This 5-star rated trip is perfect for those seeking a blend of
+              thrill and natural beauty in New Zealand.
+            </p>
+            <button
+              class="bg-[#75c987] p-[15px] rounded shadow w-[150px] mx-auto block text-white mb-[15px] hover:bg-[#6ab67a]"
+              onclick="handleSectionChange('contact')"
+            >
+              Learn More
+            </button>
+          </div>
+          <div
+            id="desc-kruger"
+            class="desc-item hidden border rounder my-[30px] shadow-lg"
+          >
+            <h2 class="text-[24px] text-center py-[20px]">
+              Kruger National Park, South Africa
+            </h2>
+            <div class="flex gap-[20px] flex-wrap items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4494.809046615634!2d31.5521652762311!3d-23.988379877420712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec34896c535a0a1%3A0x9a504ed31f67787b!2z0J3QsNGG0ZbQvtC90LDQu9GM0L3QuNC5INC_0LDRgNC6INCa0YDRjtCz0LXRgA!5e1!3m2!1suk!2sca!4v1730417028341!5m2!1suk!2sca"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                width="400"
+                height="400"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <img
+                src="imgs/kruger.jpeg"
+                alt="A photo of two zebras standing in the middle of safari"
+                class="h-[400px] object-cover rounded"
+              />
+            </div>
+            <p class="max-w-[1000px] mx-auto text-[18px] p-[20px]">
+              Discover the wonders of Africa with a 9-day safari adventure in
+              Kruger National Park! From guided tours to spot the Big Five to
+              cultural visits that immerse you in local traditions, this 4-star
+              experience offers an up-close look at South Africa’s diverse
+              wildlife and rich heritage, making it an unforgettable journey.
+            </p>
+            <button
+              class="bg-[#75c987] p-[15px] rounded shadow w-[150px] mx-auto block text-white mb-[15px] hover:bg-[#6ab67a]"
+              onclick="handleSectionChange('contact')"
+            >
+              Learn More
+            </button>
+          </div>
+          <div
+            id="desc-kyoto"
+            class="desc-item hidden border rounder my-[30px] shadow-lg"
+          >
+            <h2 class="text-[24px] text-center py-[20px]">Kyoto, Japan</h2>
+            <div class="flex gap-[20px] flex-wrap items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d257610.37175755546!2d135.5540621744143!3d35.09836561088471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001a8d6cd3cc3f1%3A0xc0961d366bbb1d3d!2z0JrRltC-0YLQviwg0J_RgNC10YTQtdC60YLRg9GA0LAg0JrRltC-0YLQviwg0K_Qv9C-0L3RltGP!5e1!3m2!1suk!2sca!4v1730417060189!5m2!1suk!2sca"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                width="400"
+                height="400"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <img
+                src="imgs/kyoto.jpg"
+                alt="A picture showcasing a Kyoto streets with a woman in traditional Japanese clothes carrying a traditional umbrella"
+                class="h-[400px] object-cover rounded"
+              />
+            </div>
+            <p class="max-w-[1000px] mx-auto text-[18px] p-[20px]">
+              Step into the heart of Japan’s rich culture in Kyoto. Over 6 days,
+              explore iconic temples, participate in traditional tea ceremonies,
+              and savor the serene beauty of this ancient city. Perfect for
+              culture enthusiasts, this 5-star rated journey provides a glimpse
+              into the timeless traditions and tranquil landscapes of Japan.
+            </p>
+            <button
+              class="bg-[#75c987] p-[15px] rounded shadow w-[150px] mx-auto block text-white mb-[15px] hover:bg-[#6ab67a]"
+              onclick="handleSectionChange('contact')"
+            >
+              Learn More
+            </button>
+          </div>
+          <div
+            id="desc-torres"
+            class="desc-item hidden border rounder my-[30px] shadow-lg"
+          >
+            <h2 class="text-[24px] text-center py-[20px]">
+              Torres del Paine, Chile
+            </h2>
+            <div class="flex gap-[20px] flex-wrap items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165620.27149974077!2d-73.07682715645471!3d-50.95855256289429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbda53aae7b7496fd%3A0xfdf64626564fc406!2z0JrQvtGA0LTQuNC70YzRlNGA0LAt0LTQtdC70Ywt0J_QsNC50L3QtQ!5e1!3m2!1suk!2sca!4v1730417089530!5m2!1suk!2sca"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                width="400"
+                height="400"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <img
+                src="imgs/torres.jpg"
+                alt="A photo of Torres del Paine. There are big mountains with some snow on them and a bright blue lake in the middle."
+                class="h-[400px] object-cover rounded"
+              />
+            </div>
+            <p class="max-w-[1000px] mx-auto text-[18px] p-[20px]">
+              Traverse the majestic landscapes of Torres del Paine on an 8-day
+              trekking adventure through one of Chile's most stunning national
+              parks. With towering mountains, breathtaking glaciers, and
+              pristine lakes, this 4-star experience is a dream for nature
+              lovers seeking to explore one of South America’s most iconic
+              destinations.
+            </p>
+            <button
+              class="bg-[#75c987] p-[15px] rounded shadow w-[150px] mx-auto block text-white mb-[15px] hover:bg-[#6ab67a]"
+              onclick="handleSectionChange('contact')"
+            >
+              Learn More
+            </button>
+          </div>
+          <div
+            id="desc-santorini"
+            class="desc-item hidden border rounder my-[30px] shadow-lg"
+          >
+            <h2 class="text-[24px] text-center py-[20px]">Santorini, Greece</h2>
+            <div class="flex gap-[20px] flex-wrap items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126703.85847400183!2d25.338230346423675!3d36.40726370783099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1499ce86adfd9ff7%3A0xb2a761f740d68afc!2z0KHQsNC90YLQvtGA0LjQvdGW!5e1!3m2!1suk!2sca!4v1730417105474!5m2!1suk!2sca"
+                style="border: 0"
+                allowfullscreen=""
+                width="400"
+                height="400"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <img
+                src="imgs/santorini.avif"
+                alt="A picture of a Santorini Island with a sea on it and a lot of small white residential buildings"
+                class="h-[400px] object-cover rounded"
+              />
+            </div>
+            <p class="max-w-[1000px] mx-auto text-[18px] p-[20px]">
+              Indulge in the romantic allure of Santorini with a 10-day island
+              escape filled with scenic island hopping and refined wine
+              tastings. Rated 5 stars, this luxurious Greek getaway is perfect
+              for those seeking sun-drenched beaches, crystal-clear waters, and
+              a taste of Mediterranean relaxation.
+            </p>
+            <button
+              class="bg-[#75c987] p-[15px] rounded shadow w-[150px] mx-auto block text-white mb-[15px] hover:bg-[#6ab67a]"
+              onclick="handleSectionChange('contact')"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact section: Form for user inquiries -->
+      <section
+        id="contact"
+        class="hidden mx-auto py-[48px] px-[24px] md:px-[48px] lg:px-[96px]"
+      >
+        <div class="bg-white shadow-lg rounded-lg p-[32px] md:p-[48px]">
+          <h2 class="text-[30px] text-[#75c987] mb-[16px] text-center">
+            Contact Us
+          </h2>
+          <p class="text-[18px] text-center mb-[32px]">
+            Have a question or want to know more about our eco-friendly travel
+            packages? Contact us using the form below, and we'll get back to you
+            by email as soon as possible.
+          </p>
+
+          <form action="" id="contact-form" class="space-y-[24px]">
+            <div>
+              <label for="name" class="block font-medium"> Your Name </label>
+              <input
+                type="text"
+                required="required"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                class="w-full mt-[8px] p-[12px] border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="email" class="block"> Your Email </label>
+              <input
+                type="email"
+                required="required"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                class="w-full mt-[8px] p-[12px] border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="message" class="block"> Your Message </label>
+              <textarea
+                id="message"
+                required="required"
+                name="message"
+                placeholder="Type your message here"
+                rows="6"
+                class="w-full mt-[8px] p-[12px] border border-gray-300 rounded-lg resize-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full md:w-auto bg-[#75c987] text-white font-bold py-[12px] px-[24px] rounded-lg hover:bg-[#61a871] transition duration-200"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: Contact information and social media links -->
+    <section>
+      <footer
+        id="footer"
+        class="bg-[#75c987] p-[20px] flex-col md:flex-row md:justify-between flex"
+      >
+        <div>
+          <p>Contact us:</p>
+
+          <!-- Phone and email contact details -->
+          <div class="text-white">
+            <div class="flex my-[5px]">
+              <img
+                src="./imgs/phone-call.png"
+                class="w-[25px] mr-[10px]"
+                alt="A phone icone"
+              />
+              <p>(555) 123-4567</p>
+            </div>
+            <div class="flex mb-[10px] md:mb-0">
+              <img
+                src="./imgs/mail.png"
+                class="w-[25px] mr-[10px]"
+                alt="An email icon"
+              />
+              <p>contact@ecotravel.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social media links -->
+        <div class="flex gap-3 md:mb-[5px] mt-auto">
+          <a href="#" class="text-white me-2">
+            <img
+              src="./imgs/instagram.png"
+              class="w-[30px]"
+              alt="Instagram logo"
+            />
+          </a>
+          <a href="#" class="text-white me-2">
+            <img
+              src="./imgs/facebook.png"
+              class="w-[30px]"
+              alt="Facebook logo"
+            />
+          </a>
+          <a href="#" class="text-white">
+            <img src="./imgs/tik-tok.png" class="w-[30px]" alt="Tiktok logo" />
+          </a>
+        </div>
+
+        <!-- Footer copyright info -->
+        <p class="mt-[10px] md:mr-0 mb-0 md:mt-auto">
+          &copy; 2024 EcoTravel. All rights reserved.
+        </p>
+      </footer>
+    </section>
+
+    <!-- External JavaScript for handling button clicks -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

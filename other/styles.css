@@ -1,0 +1,21 @@
+/* Smooth scrolling for a better user experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Table styling: Adds borders and collapses them for a cleaner look */
+table,
+th,
+td {
+  border: 1px solid #696969;
+  border-collapse: collapse;
+}
+
+.selectedBtn {
+  background-color: #5ca06b;
+}
+
+.highlighted {
+  background-color: #75c987;
+  color: white;
+}
